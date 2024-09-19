@@ -1,14 +1,13 @@
 public class CaffeinatedBeverage
 {
-    private String name;
-    private int ounces;
-    private double price;
-    private int sipAmount = 1;
+    protected String name;
+    protected int ounces;
+    protected double price;
     
     public CaffeinatedBeverage() {
-        this.name = name;
-        this.ounces = ounces;
-        this.price = price;
+        this.name = null;
+        this.ounces = 0;
+        this.price = 0;
     }
 
     public CaffeinatedBeverage(String name, int ounces, double price) {
@@ -58,6 +57,7 @@ public class CaffeinatedBeverage
     }
 
     public boolean sip(int ounces, int sipAmount) {
+        sipAmount = 1;
         ounces = ounces - sipAmount;
         if (ounces <= 0) {
             return false;
@@ -69,9 +69,12 @@ public class CaffeinatedBeverage
     public boolean isEmpty(int ounces, double price) {
         if (ounces >= 0 && price >= 0) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
+    }
+
+    public String toString() {
+        return super.toString() + "Tea: " + this.name + " " + this.ounces + " " + this.price;
     }
 }
