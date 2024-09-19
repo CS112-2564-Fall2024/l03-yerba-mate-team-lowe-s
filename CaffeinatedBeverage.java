@@ -3,11 +3,24 @@ public class CaffeinatedBeverage
     private String name;
     private int ounces;
     private double price;
+    private int sipAmount = 1;
+    
+    public CaffeinatedBeverage() {
+        this.name = name;
+        this.ounces = ounces;
+        this.price = price;
+    }
 
     public CaffeinatedBeverage(String name, int ounces, double price) {
         this.name = name;
         this.ounces = ounces;
         this.price = price;
+    }
+
+    public CaffeinatedBeverage(CaffeinatedBeverage copyCaffeinatedBeverage) {
+        this.name = copyCaffeinatedBeverage.name;
+        this.ounces = copyCaffeinatedBeverage.ounces;
+        this.price = copyCaffeinatedBeverage.price;
     }
 
     public String getName() {
@@ -36,10 +49,29 @@ public class CaffeinatedBeverage
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || this.getClass() != o.getClass()) return false;
+        if (o == null || this.getClass() != o.getClass())
+            return false;
         CaffeinatedBeverage that = (CaffeinatedBeverage) o;
         return this.ounces == that.ounces &&
                 Double.compare(this.price, that.price) == 0 &&
-               this.name.equals(that.name);
+                this.name.equals(that.name);
+    }
+
+    public boolean sip(int ounces, int sipAmount) {
+        ounces = ounces - sipAmount;
+        if (ounces <= 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public boolean isEmpty(int ounces, double price) {
+        if (ounces >= 0 && price >= 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
