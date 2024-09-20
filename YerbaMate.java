@@ -35,8 +35,8 @@ public class YerbaMate extends Tea {
         return false;
     }
 
-    @Override
+  //  @Override
     public String toString() {
-        return super.toString() + "Tea: " + this.name + ", " + this.ounces + " ounces, brewed @ " + this.brewTemp + "°C, $" + this.price + ", " + numPasses + " so far";
+        return "Yerba Mate [Name: " + this.name + ", " + this.ounces + " ounces, brewed @ " + this.brewTemp + "°C, $" + this.price + ", " + numPasses + " passes so far]";
     }
 }

@@ -41,8 +41,8 @@ public class Tea extends CaffeinatedBeverage {
         return false;
     }
 
-    @Override
+   // @Override
     public String toString() {
-        return super.toString() + "Tea: " + this.name + ", " + this.ounces + " ounces, brewed @ " + this.brewTemp + "°C, $" + this.price;
+        return "Tea [Name: " + this.name + ", " + this.ounces + " ounces, brewed @ " + this.brewTemp + "°C, $" + this.price +"]";
     }
 }

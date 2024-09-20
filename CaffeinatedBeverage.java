@@ -5,7 +5,7 @@ public class CaffeinatedBeverage
     protected double price;
     
     public CaffeinatedBeverage() {
-        this.name = null;
+        //this.name = null;
         this.ounces = 0;
         this.price = 0;
     }
@@ -75,6 +75,6 @@ public class CaffeinatedBeverage
     }
 
     public String toString() {
-        return super.toString() + "Tea: " + this.name + " " + this.ounces + " " + this.price;
+        return "CaffeinatedBeverage[ " + this.name + " " + this.ounces + " " + this.price + "]";
     }
 }
